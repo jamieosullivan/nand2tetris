@@ -14,5 +14,10 @@ CHIP Mux {
     OUT out;
 
     PARTS:
-    // Put your code here:
+    // Write canonical form from truth table and reduce
+    // with distributive law
+    Not(in=sel, out=notsel);
+    And(a=b, b=sel, out=selandb);
+    And(a=a, b=notsel, out=notselanda);
+    Or(a=selandb, b=notselanda, out=out);
 }
